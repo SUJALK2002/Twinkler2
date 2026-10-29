@@ -23,8 +23,8 @@ export default function Navbar() {
         </button>
         <nav className={open ? 'nav-links is-open' : 'nav-links'}>
           <NavLink to="/" onClick={close}>Home</NavLink>
-          <NavLink to="/kits" onClick={close}>Kits</NavLink>
-          <NavLink to="/training-video" onClick={close}>Demo Training Video</NavLink>
+          <NavLink to="/kits" onClick={close}>Robotics Kits</NavLink>
+          <NavLink to="/training-video" onClick={close}>Training Resources</NavLink>
           <NavLink to="/about" onClick={close}>About Us</NavLink>
           <NavLink to="/contact" onClick={close}>Contact Us</NavLink>
           <div className="login-dropdown">

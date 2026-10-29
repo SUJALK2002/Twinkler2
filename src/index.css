@@ -6,8 +6,8 @@
 
 .tt-admin,
 .tt-admin-auth {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
     line-height: 1.55;
     background:
         radial-gradient(ellipse at 82% 3%, rgba(242, 154, 63, .11), transparent 34rem),
@@ -19,7 +19,7 @@
 .tt-admin h3,
 .tt-admin-auth h1,
 .tt-admin-auth h2 {
-    font-family: Manrope, sans-serif;
+    font-family: var(--font-display);
     letter-spacing: -.035em
 }
 
@@ -44,8 +44,8 @@
 
 .tt-admin aside nav a {
     min-height: 44px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
     letter-spacing: -.01em;
     border: 1px solid transparent;
     transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease
@@ -80,19 +80,19 @@
 }
 
 .tt-admin-content h1 {
-    font-size: clamp(26px, 2.4vw, 34px);
+    font-size: clamp(1.625rem, 2.4vw, 2.125rem);
     line-height: 1.16;
     font-weight: 800
 }
 
 .tt-admin-content h2 {
-    font-size: clamp(20px, 1.8vw, 25px);
+    font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
     line-height: 1.25;
     font-weight: 800
 }
 
 .tt-admin-content h3 {
-    font-size: 17px;
+    font-size: 1.0625rem;
     line-height: 1.35;
     font-weight: 800
 }
@@ -104,7 +104,7 @@
 .tt-admin-content textarea,
 .tt-admin-content select,
 .tt-admin-main header {
-    font-family: 'DM Sans', sans-serif
+    font-family: var(--font-body)
 }
 
 .admin-page-heading {
@@ -226,7 +226,7 @@
 .tt-stat-label {
     max-width: 150px;
     padding-top: 2px;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800;
     line-height: 1.4;
     letter-spacing: .1em;
@@ -239,8 +239,8 @@
 }
 
 .tt-stat-value {
-    font-family: Manrope, sans-serif;
-    font-size: 29px;
+    font-family: var(--font-display);
+    font-size: 1.8125rem;
     font-weight: 800;
     line-height: 1
 }
@@ -250,25 +250,25 @@
     right: 11px;
     bottom: 3px;
     z-index: 2;
-    font-size: 8px;
+    font-size: 0.5rem;
     font-weight: 600;
     opacity: .58
 }
 
 .tt-stat-back-title {
-    font-family: Manrope, sans-serif;
-    font-size: 13px;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
     font-weight: 800
 }
 
 .tt-stat-back-copy {
-    font-size: 10px;
+    font-size: 0.625rem;
     line-height: 1.5;
     opacity: .82
 }
 
 .tt-stat-back-action {
-    font-size: 8px;
+    font-size: 0.5rem;
     font-weight: 700;
     opacity: .62
 }
@@ -324,7 +324,7 @@
     border-radius: 999px;
     background: rgba(255, 255, 255, .28);
     padding: 4px 7px;
-    font-size: 8px;
+    font-size: 0.5rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase
@@ -348,7 +348,7 @@
 }
 
 .tt-dashboard .admin-page-heading h1 {
-    font-size: clamp(22px, 2vw, 29px)
+    font-size: clamp(1.375rem, 2vw, 1.8125rem)
 }
 
 .tt-dashboard .tt-admin-panel {
@@ -361,13 +361,13 @@
 }
 
 .tt-dashboard .tt-admin-panel h3 {
-    font-size: 14px;
+    font-size: 0.875rem;
     letter-spacing: -.02em
 }
 
 .tt-dashboard .recharts-cartesian-axis-tick-value {
     fill: #647188;
-    font-size: 10px
+    font-size: 0.625rem
 }
 
 .tt-dashboard .recharts-cartesian-grid line {
@@ -375,7 +375,7 @@
 }
 
 .tt-dashboard .recharts-tooltip-wrapper {
-    font-size: 11px
+    font-size: 0.6875rem
 }
 
 .tt-dashboard .tt-admin-panel .space-y-3 > div {
@@ -414,7 +414,7 @@
 .tt-admin-content textarea,
 .tt-admin-content select,
 .tt-admin-auth input {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-body);
     transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease
 }
 
@@ -482,7 +482,7 @@
     }
 
     .tt-stat-value {
-        font-size: 25px
+        font-size: 1.5625rem
     }
 
     .tt-dashboard .tt-admin-panel {
@@ -509,7 +509,11 @@
 }
 
 :root {
-    font-family: 'DM Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Manrope', sans-serif;
+    --type-scale: 1;
+    font-size: calc(100% * var(--type-scale));
+    font-family: var(--font-body);
     color: #203858;
     background: #fffdf8;
     font-synthesis: none;
@@ -542,7 +546,19 @@ html {
 
 body {
     margin: 0;
-    min-width: 320px
+    min-width: 320px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display)
 }
 
 a {
@@ -614,7 +630,7 @@ summary:focus-visible {
     align-items: center;
     gap: 8px;
     color: #a85f21;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 1.7px;
     line-height: 1.4
@@ -630,8 +646,8 @@ summary:focus-visible {
 }
 
 .section-heading h2 {
-    font-family: Manrope, sans-serif;
-    font-size: clamp(30px, 4vw, 46px);
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 4vw, 2.875rem);
     line-height: 1.13;
     letter-spacing: -1.8px;
     margin: 14px 0 14px;
@@ -641,7 +657,7 @@ summary:focus-visible {
 .section-heading p,
 .section-heading-row .section-heading p {
     color: var(--muted);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.8;
     max-width: 590px;
     margin: 0
@@ -656,7 +672,7 @@ summary:focus-visible {
 }
 
 .site-header {
-    height: 82px;
+    height: 100px;
     background: rgba(255, 253, 248, .94);
     backdrop-filter: blur(16px);
     position: sticky;
@@ -680,6 +696,11 @@ summary:focus-visible {
     min-width: max-content
 }
 
+.brand-logo {
+    width: 82px;
+    height: 82px
+}
+
 .brand-mark {
     width: 43px;
     height: 43px;
@@ -691,9 +712,9 @@ summary:focus-visible {
 }
 
 .brand-mark span {
-    font-family: Manrope, sans-serif;
+    font-family: var(--font-display);
     font-weight: 800;
-    font-size: 16px
+    font-size: 1rem
 }
 
 .brand-copy {
@@ -703,8 +724,8 @@ summary:focus-visible {
 }
 
 .brand-copy strong {
-    font-family: Manrope, sans-serif;
-    font-size: 16px;
+    font-family: var(--font-display);
+    font-size: 1.1875rem;
     letter-spacing: -.6px
 }
 
@@ -714,8 +735,8 @@ summary:focus-visible {
 }
 
 .brand-copy small {
-    font-size: 8px;
-    letter-spacing: 1.5px;
+    font-size: 0.625rem;
+    letter-spacing: 1.6px;
     font-weight: 800;
     color: #738096
 }
@@ -723,8 +744,8 @@ summary:focus-visible {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 22px;
-    font-size: 13px;
+    gap: 24px;
+    font-size: 0.9375rem;
     font-weight: 700;
     color: #52627a
 }
@@ -740,7 +761,7 @@ summary:focus-visible {
     gap: 8px;
     background: var(--navy);
     color: white;
-    padding: 13px 17px;
+    padding: 14px 19px;
     border-radius: 10px;
     transition: background .2s, transform .2s
 }
@@ -778,7 +799,7 @@ summary:focus-visible {
     padding: 11px 12px;
     border-radius: 8px;
     color: var(--navy);
-    font-size: 12px;
+    font-size: 0.875rem;
     font-weight: 700
 }
 
@@ -820,7 +841,7 @@ summary:focus-visible {
     padding: 9px 13px;
     border: 1px solid #e9d7b8;
     border-radius: 100px;
-    font-size: 10px;
+    font-size: 0.625rem;
     letter-spacing: 1.1px;
     font-weight: 800;
     color: #805a37;
@@ -837,8 +858,8 @@ summary:focus-visible {
 
 .hero h1,
 .inner-hero h1 {
-    font-family: Manrope, sans-serif;
-    font-size: clamp(44px, 5.3vw, 68px);
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 5.3vw, 4.25rem);
     font-weight: 800;
     letter-spacing: -3.7px;
     line-height: 1.055;
@@ -854,7 +875,7 @@ summary:focus-visible {
 .hero-subtitle {
     max-width: 530px;
     color: #5f6d81;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.85;
     margin: 0
 }
@@ -873,7 +894,7 @@ summary:focus-visible {
     gap: 10px;
     border-radius: 10px;
     padding: 14px 19px;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 800;
     line-height: 1.2;
     border: 1px solid transparent;
@@ -950,7 +971,7 @@ summary:focus-visible {
 }
 
 .hero-proof p {
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: #7a8491;
     line-height: 1.6;
     margin: 0
@@ -958,7 +979,7 @@ summary:focus-visible {
 
 .hero-proof strong {
     color: var(--navy);
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .hero-art {
@@ -1271,7 +1292,7 @@ summary:focus-visible {
     align-items: center;
     gap: 9px;
     padding: 11px 13px;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800;
     line-height: 1.5
 }
@@ -1293,7 +1314,7 @@ summary:focus-visible {
 }
 
 .sticker-spark {
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #82a078
 }
 
@@ -1396,7 +1417,7 @@ summary:focus-visible {
     border-radius: 100px;
     padding: 9px 14px;
     background: #fffaf1;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
     color: #657087;
     display: flex;
@@ -1418,7 +1439,7 @@ summary:focus-visible {
     align-items: center;
     gap: 20px;
     padding: 19px 0;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800;
     letter-spacing: 1.1px;
     color: #758093
@@ -1429,7 +1450,7 @@ summary:focus-visible {
     align-items: center;
     gap: 12px;
     letter-spacing: 0;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 600
 }
 
@@ -1454,8 +1475,8 @@ summary:focus-visible {
 }
 
 .value-strip p {
-    font-family: Manrope, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
     font-weight: 800;
     margin: 0
 }
@@ -1471,7 +1492,7 @@ summary:focus-visible {
     align-items: center;
     gap: 6px;
     color: #e4eaf1;
-    font-size: 11px
+    font-size: 0.6875rem
 }
 
 .value-strip-inner svg {
@@ -1534,7 +1555,7 @@ summary:focus-visible {
     position: absolute;
     right: 22px;
     top: 31px;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800;
     letter-spacing: 1px;
     color: #a6adba
@@ -1543,8 +1564,8 @@ summary:focus-visible {
 .offering-card h3,
 .project-card h3,
 .journey-card h3 {
-    font-family: Manrope, sans-serif;
-    font-size: 17px;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
     letter-spacing: -.5px;
     margin: 0 0 10px;
     font-weight: 800
@@ -1554,7 +1575,7 @@ summary:focus-visible {
 .project-card p,
 .journey-card p {
     color: #69768a;
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.75;
     margin: 0
 }
@@ -1599,7 +1620,7 @@ summary:focus-visible {
     gap: 8px;
     white-space: nowrap;
     color: var(--navy);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 800;
     margin-bottom: 42px
 }
@@ -1693,25 +1714,25 @@ summary:focus-visible {
 }
 
 .project-index {
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800;
     letter-spacing: 1px;
     color: #9da5b2
 }
 
 .project-card .eyebrow {
-    font-size: 9px;
+    font-size: 0.5625rem;
     letter-spacing: 1.2px;
     margin-bottom: 8px
 }
 
 .project-card h3 {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 8px
 }
 
 .project-card p {
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .project-card-bottom {
@@ -1721,7 +1742,7 @@ summary:focus-visible {
     justify-content: space-between;
     align-items: center;
     color: #8b95a4;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 800
 }
 
@@ -1736,7 +1757,7 @@ summary:focus-visible {
     gap: 20px;
     margin-top: 28px;
     color: #727f91;
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .button-outline {
@@ -1753,15 +1774,15 @@ summary:focus-visible {
 }
 
 .learning-copy h2 {
-    font-family: Manrope, sans-serif;
-    font-size: clamp(34px, 4vw, 48px);
+    font-family: var(--font-display);
+    font-size: clamp(2.125rem, 4vw, 3rem);
     line-height: 1.12;
     letter-spacing: -1.8px;
     margin: 16px 0
 }
 
 .learning-copy>p {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.8;
     color: #c1cbd8;
     max-width: 430px
@@ -1799,11 +1820,11 @@ summary:focus-visible {
 }
 
 .skill-list strong {
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .skill-list small {
-    font-size: 10px;
+    font-size: 0.625rem;
     color: #b7c3d2
 }
 
@@ -1826,7 +1847,7 @@ summary:focus-visible {
     justify-content: space-between;
     gap: 10px;
     color: #aebdce;
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1.2px
 }
@@ -1836,7 +1857,7 @@ summary:focus-visible {
     align-items: center;
     gap: 6px;
     color: #a7c8a0;
-    font-size: 8px
+    font-size: 0.5rem
 }
 
 .board-live i {
@@ -1859,8 +1880,8 @@ summary:focus-visible {
 }
 
 .level-num {
-    font-family: Manrope, sans-serif;
-    font-size: 17px;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
     font-weight: 800;
     color: #f4b16a
 }
@@ -1896,20 +1917,20 @@ summary:focus-visible {
 }
 
 .level-step>div:nth-child(3)>span {
-    font-size: 8px;
+    font-size: 0.5rem;
     letter-spacing: 1.2px;
     color: #a9b7c8;
     font-weight: 800
 }
 
 .level-step h3 {
-    font-family: Manrope, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
     margin: 4px 0 5px
 }
 
 .level-step p {
-    font-size: 10px;
+    font-size: 0.625rem;
     color: #bdc8d5;
     margin: 0
 }
@@ -1928,7 +1949,7 @@ summary:focus-visible {
     border-top: 1px solid #ffffff20;
     padding-top: 17px;
     margin-top: 20px;
-    font-size: 8px;
+    font-size: 0.5rem;
     letter-spacing: .7px
 }
 
@@ -1968,7 +1989,7 @@ summary:focus-visible {
 }
 
 .journey-top span {
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800;
     color: #b66b29;
     background: #fff0dc;
@@ -1981,7 +2002,7 @@ summary:focus-visible {
 }
 
 .journey-card h3 {
-    font-size: 19px
+    font-size: 1.1875rem
 }
 
 .journey-card p {
@@ -2030,8 +2051,8 @@ summary:focus-visible {
     gap: 15px;
     list-style: none;
     cursor: pointer;
-    font-family: Manrope, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
     font-weight: 800
 }
 
@@ -2051,7 +2072,7 @@ summary:focus-visible {
 
 .faq-item p {
     color: #68758a;
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.8;
     margin: 13px 28px 0 0
 }
@@ -2081,15 +2102,15 @@ summary:focus-visible {
 }
 
 .cta-content h2 {
-    font-family: Manrope, sans-serif;
-    font-size: clamp(30px, 4vw, 44px);
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
     letter-spacing: -1.6px;
     line-height: 1.15;
     margin: 15px 0
 }
 
 .cta-content p {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.8;
     color: #d0d9e5;
     max-width: 430px;
@@ -2128,7 +2149,7 @@ summary:focus-visible {
 }
 
 .cta-robot span {
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1.5px
 }
@@ -2201,7 +2222,7 @@ summary:focus-visible {
 
 .footer-brand p {
     color: #b8c6d6;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.8;
     max-width: 270px;
     margin: 18px 0 0
@@ -2213,12 +2234,12 @@ summary:focus-visible {
     align-items: flex-start;
     gap: 13px;
     color: #b8c6d6;
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .footer-links>strong {
     color: white;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-bottom: 4px
 }
 
@@ -2245,7 +2266,7 @@ summary:focus-visible {
     border-top: 1px solid #ffffff20;
     padding-top: 18px;
     color: #93a4b9;
-    font-size: 10px
+    font-size: 0.625rem
 }
 
 .inner-hero {
@@ -2253,13 +2274,13 @@ summary:focus-visible {
 }
 
 .inner-hero h1 {
-    font-size: clamp(42px, 5vw, 60px);
+    font-size: clamp(2.625rem, 5vw, 3.75rem);
     max-width: 800px;
     margin: 17px 0
 }
 
 .inner-hero>.container>p {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.85;
     color: #637087;
     max-width: 670px;
@@ -2279,7 +2300,7 @@ summary:focus-visible {
     border-radius: 100px;
     background: #fffdf8;
     color: #68758a;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800;
     cursor: pointer
 }
@@ -2299,12 +2320,12 @@ summary:focus-visible {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 23px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: #68758a
 }
 
 .results-line span:last-child {
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1.3px
 }
@@ -2318,15 +2339,15 @@ summary:focus-visible {
 }
 
 .project-end-cta h2 {
-    font-family: Manrope, sans-serif;
-    font-size: 27px;
+    font-family: var(--font-display);
+    font-size: 1.6875rem;
     letter-spacing: -1px;
     margin: 0 0 10px
 }
 
 .project-end-cta p {
     color: #69768a;
-    font-size: 13px;
+    font-size: 0.8125rem;
     margin: 0 0 22px
 }
 
@@ -2347,8 +2368,8 @@ summary:focus-visible {
 
 .contact-intro h2,
 .form-heading h2 {
-    font-family: Manrope, sans-serif;
-    font-size: clamp(30px, 3.5vw, 42px);
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.5vw, 2.625rem);
     line-height: 1.15;
     letter-spacing: -1.5px;
     margin: 15px 0
@@ -2356,7 +2377,7 @@ summary:focus-visible {
 
 .contact-intro>p,
 .form-heading>p {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.8;
     color: #69768a
 }
@@ -2401,14 +2422,14 @@ summary:focus-visible {
 }
 
 .contact-info-list small {
-    font-size: 9px;
+    font-size: 0.5625rem;
     letter-spacing: 1.2px;
     font-weight: 800;
     color: #8993a2
 }
 
 .contact-info-list strong {
-    font-size: 12px;
+    font-size: 0.75rem;
     overflow-wrap: anywhere
 }
 
@@ -2431,7 +2452,7 @@ summary:focus-visible {
 }
 
 .contact-note p {
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.7;
     color: #69768a;
     margin: 0
@@ -2450,13 +2471,13 @@ summary:focus-visible {
 }
 
 .form-heading h2 {
-    font-size: 29px;
+    font-size: 1.8125rem;
     margin-bottom: 8px
 }
 
 .form-heading>p {
     margin: 0 0 25px;
-    font-size: 12px
+    font-size: 0.75rem
 }
 
 .form-grid {
@@ -2469,7 +2490,7 @@ summary:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800;
     color: #394d68
 }
@@ -2483,7 +2504,7 @@ summary:focus-visible {
     padding: 12px 12px;
     background: #fffdf9;
     color: var(--navy);
-    font-size: 12px;
+    font-size: 0.75rem;
     outline: none;
     transition: border .2s
 }
@@ -2517,14 +2538,14 @@ summary:focus-visible {
 }
 
 .form-privacy {
-    font-size: 10px;
+    font-size: 0.625rem;
     text-align: center;
     color: #9099a7;
     margin: 12px 0 0
 }
 
 .form-error {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #b42318;
     margin: 12px 0 0
 }
@@ -2534,7 +2555,7 @@ summary:focus-visible {
     gap: 8px;
     align-items: flex-start;
     color: #3e7951;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.6
 }
 
@@ -2552,7 +2573,7 @@ summary:focus-visible {
 }
 
 .not-found h1 {
-    font-family: Manrope, sans-serif
+    font-family: var(--font-display)
 }
 
 .whatsapp-contact {
@@ -2585,7 +2606,7 @@ summary:focus-visible {
     border-radius: 8px;
     background: var(--navy);
     color: white;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     white-space: nowrap;
     opacity: 0;
@@ -2627,8 +2648,8 @@ summary:focus-visible {
 .training-video-placeholder h2 {
     max-width: 540px;
     margin: 14px 0 10px;
-    font-family: Manrope, sans-serif;
-    font-size: clamp(24px, 3vw, 34px);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
     letter-spacing: -1px
 }
 
@@ -2636,7 +2657,7 @@ summary:focus-visible {
     max-width: 530px;
     margin: 0 0 22px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.8
 }
 
@@ -2675,7 +2696,7 @@ summary:focus-visible {
 .login-choice-card p {
     margin: 0 0 20px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.7
 }
 
@@ -2684,7 +2705,7 @@ summary:focus-visible {
     align-items: center;
     gap: 8px;
     color: var(--orange-dark);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 800
 }
 
@@ -2710,7 +2731,7 @@ summary:focus-visible {
 .login-back-link {
     margin: 16px 0 0;
     text-align: center;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700
 }
 
@@ -2837,14 +2858,14 @@ summary:focus-visible {
 
 .demo-kit-number {
     color: #a6adba;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px
 }
 
 .demo-kit-level {
     color: #8a94a2;
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1.4px
 }
@@ -2859,7 +2880,7 @@ summary:focus-visible {
 .demo-kit-face p {
     margin: 0;
     color: #69768a;
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.8
 }
 
@@ -2872,7 +2893,7 @@ summary:focus-visible {
     margin-top: auto;
     padding-top: 24px;
     color: var(--orange-dark);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 800
 }
 
@@ -2902,7 +2923,7 @@ summary:focus-visible {
 
 .demo-kit-back h3 {
     margin-top: 6px;
-    font-size: 19px
+    font-size: 1.1875rem
 }
 
 .demo-kit-tabs {
@@ -2960,7 +2981,7 @@ summary:focus-visible {
 }
 
 .demo-kit-detail p {
-    font-size: 11px;
+    font-size: 0.6875rem;
     line-height: 1.65
 }
 
@@ -2974,7 +2995,7 @@ summary:focus-visible {
     margin-top: auto;
     padding-top: 11px;
     color: var(--orange-dark);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800
 }
 
@@ -2997,7 +3018,7 @@ summary:focus-visible {
     max-width: 620px;
     margin: 0 0 24px;
     color: #637087;
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.85
 }
 
@@ -3035,7 +3056,7 @@ summary:focus-visible {
     border-radius: 100px;
     background: #fffdf2e8;
     color: var(--navy);
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1px
 }
@@ -3071,7 +3092,7 @@ summary:focus-visible {
     max-width: 490px;
     margin: 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.8
 }
 
@@ -3123,7 +3144,7 @@ summary:focus-visible {
 
 .about-goal-card>span {
     color: #b66b29;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 800;
     letter-spacing: 1px
 }
@@ -3131,7 +3152,7 @@ summary:focus-visible {
 .about-goal-card p {
     margin: 0;
     color: var(--navy);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
     line-height: 1.6
 }
@@ -3174,7 +3195,7 @@ summary:focus-visible {
 .about-team-card p {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.75
 }
 
@@ -3210,14 +3231,19 @@ summary:focus-visible {
     border-radius: 100px;
     background: #fffdf2e8;
     color: var(--navy);
-    font-size: 9px;
+    font-size: 0.5625rem;
     font-weight: 800;
     letter-spacing: 1px
 }
 
 @media(max-width:1000px) {
     .nav-links {
-        gap: 18px
+        gap: 12px;
+        font-size: 0.875rem
+    }
+
+    .nav-cta {
+        padding: 12px 14px
     }
 
     .hero-grid {
@@ -3231,7 +3257,7 @@ summary:focus-visible {
     }
 
     .hero h1 {
-        font-size: clamp(43px, 5.6vw, 59px)
+        font-size: clamp(2.6875rem, 5.6vw, 3.6875rem)
     }
 
     .offering-grid {
@@ -3273,7 +3299,12 @@ summary:focus-visible {
     }
 
     .site-header {
-        height: 72px
+        height: 86px
+    }
+
+    .brand-logo {
+        width: 66px;
+        height: 66px
     }
 
     .brand-mark {
@@ -3282,11 +3313,11 @@ summary:focus-visible {
     }
 
     .brand-copy strong {
-        font-size: 14px
+        font-size: 1rem
     }
 
     .brand-copy small {
-        font-size: 7px
+        font-size: 0.5625rem
     }
 
     .menu-toggle {
@@ -3302,13 +3333,14 @@ summary:focus-visible {
         position: absolute;
         left: 0;
         right: 0;
-        top: 71px;
+        top: 85px;
         background: #fffdf8;
         padding: 15px 22px 22px;
         display: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        font-size: 1rem;
         border-bottom: 1px solid var(--line);
         box-shadow: 0 16px 24px #2038580d
     }
@@ -3319,7 +3351,7 @@ summary:focus-visible {
 
     .nav-links>a:not(.nav-cta) {
         display: block;
-        padding: 14px 4px;
+        padding: 16px 4px;
         border-bottom: 1px solid #eee9df
     }
 
@@ -3386,13 +3418,13 @@ summary:focus-visible {
     }
 
     .hero h1 {
-        font-size: clamp(43px, 11vw, 61px);
+        font-size: clamp(2.6875rem, 11vw, 3.8125rem);
         letter-spacing: -2.8px;
         margin: 22px 0 17px
     }
 
     .hero-subtitle {
-        font-size: 14px
+        font-size: 0.875rem
     }
 
     .hero-actions {
@@ -3474,11 +3506,11 @@ summary:focus-visible {
     }
 
     .offering-card h3 {
-        font-size: 15px
+        font-size: 0.9375rem
     }
 
     .offering-card p {
-        font-size: 12px
+        font-size: 0.75rem
     }
 
     .offering-number {
@@ -3502,11 +3534,11 @@ summary:focus-visible {
     }
 
     .project-card h3 {
-        font-size: 14px
+        font-size: 0.875rem
     }
 
     .project-card p {
-        font-size: 11px
+        font-size: 0.6875rem
     }
 
     .project-card-top {
@@ -3524,7 +3556,7 @@ summary:focus-visible {
     }
 
     .learning-copy h2 {
-        font-size: 39px
+        font-size: 2.4375rem
     }
 
     .level-board {
@@ -3543,11 +3575,11 @@ summary:focus-visible {
     }
 
     .level-step h3 {
-        font-size: 12px
+        font-size: 0.75rem
     }
 
     .level-step p {
-        font-size: 9px
+        font-size: 0.5625rem
     }
 
     .journey-grid {
@@ -3586,7 +3618,7 @@ summary:focus-visible {
     }
 
     .cta-content h2 {
-        font-size: 34px
+        font-size: 2.125rem
     }
 
     .cta-illustration {
@@ -3624,7 +3656,7 @@ summary:focus-visible {
     }
 
     .footer-bottom {
-        font-size: 9px
+        font-size: 0.5625rem
     }
 
     .inner-hero {
@@ -3632,12 +3664,12 @@ summary:focus-visible {
     }
 
     .inner-hero h1 {
-        font-size: clamp(39px, 10vw, 54px);
+        font-size: clamp(2.4375rem, 10vw, 3.375rem);
         letter-spacing: -2.5px
     }
 
     .inner-hero>.container>p {
-        font-size: 13px
+        font-size: 0.8125rem
     }
 
     .contact-layout {
@@ -3662,7 +3694,7 @@ summary:focus-visible {
     }
 
     .form-heading h2 {
-        font-size: 27px
+        font-size: 1.6875rem
     }
 }
 
@@ -3676,7 +3708,7 @@ summary:focus-visible {
     }
 
     .hero-pill {
-        font-size: 8px
+        font-size: 0.5rem
     }
 
     .hero-actions {
@@ -3685,7 +3717,7 @@ summary:focus-visible {
 
     .hero-actions .button {
         padding: 13px 12px;
-        font-size: 11px
+        font-size: 0.6875rem
     }
 
     .hero-art {
@@ -3715,7 +3747,7 @@ summary:focus-visible {
     }
 
     .project-card p {
-        font-size: 12px
+        font-size: 0.75rem
     }
 
     .project-card-bottom {
@@ -3737,19 +3769,19 @@ summary:focus-visible {
     }
 
     .level-step h3 {
-        font-size: 11px
+        font-size: 0.6875rem
     }
 
     .level-step p {
-        font-size: 8px
+        font-size: 0.5rem
     }
 
     .board-top {
-        font-size: 8px
+        font-size: 0.5rem
     }
 
     .board-footer {
-        font-size: 7px
+        font-size: 0.4375rem
     }
 
     .form-grid {
@@ -3779,7 +3811,7 @@ summary:focus-visible {
     }
 
     .filter-button {
-        font-size: 10px;
+        font-size: 0.625rem;
         padding: 9px 11px
     }
 
@@ -3830,7 +3862,7 @@ summary:focus-visible {
 
     .catalogue-eyebrow {
         color: #ee650d;
-        font-size: 11px;
+        font-size: 0.6875rem;
         font-weight: 900;
         letter-spacing: 1.7px
     }
@@ -3838,8 +3870,8 @@ summary:focus-visible {
     .catalogue-hero-copy h1 {
         margin: 8px 0 6px;
         color: #0c3563;
-        font-family: Manrope, sans-serif;
-        font-size: clamp(32px, 4vw, 48px);
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
         font-weight: 800;
         letter-spacing: -1.7px;
         line-height: 1.1
@@ -3849,7 +3881,7 @@ summary:focus-visible {
         max-width: 500px;
         margin: 0;
         color: #58708a;
-        font-size: 15px;
+        font-size: 0.9375rem;
         line-height: 1.55
     }
 
@@ -3865,7 +3897,7 @@ summary:focus-visible {
         align-items: center;
         gap: 7px;
         color: #284565;
-        font-size: 10px;
+        font-size: 0.625rem;
         font-weight: 800
     }
 
@@ -4010,8 +4042,8 @@ summary:focus-visible {
         padding: 11px 13px;
         transform: rotate(-12deg);
         color: #718198;
-        font-family: Manrope, sans-serif;
-        font-size: 15px;
+        font-family: var(--font-display);
+        font-size: 0.9375rem;
         font-style: italic;
         line-height: 1.25
     }
@@ -4021,7 +4053,7 @@ summary:focus-visible {
         top: 45px;
         right: 35%;
         color: #ff6a00;
-        font-size: 32px
+        font-size: 2rem
     }
 
     .catalogue-checklist {
@@ -4036,7 +4068,7 @@ summary:focus-visible {
         background: #ffdf9a;
         box-shadow: 0 7px 18px rgba(145, 105, 38, .12);
         color: #3c4653;
-        font-size: 10px;
+        font-size: 0.625rem;
         font-weight: 800
     }
 
@@ -4076,6 +4108,21 @@ summary:focus-visible {
         background: linear-gradient(145deg, #e5f2ff, #c8e3ff)
     }
 
+    .catalogue-card:nth-child(-n+3) {
+        border-color: #eee2c5;
+        background: linear-gradient(145deg, #fffaf0, #f5edda)
+    }
+
+    .catalogue-card:nth-child(n+4):nth-child(-n+6) {
+        border-color: rgba(238, 195, 141, .4);
+        background: linear-gradient(145deg, #fff1df, #ffdbb6)
+    }
+
+    .catalogue-card:nth-child(n+7) {
+        border-color: rgba(165, 202, 235, .4);
+        background: linear-gradient(145deg, #e5f2ff, #c8e3ff)
+    }
+
     .catalogue-card-heading {
         position: relative;
         z-index: 2;
@@ -4098,11 +4145,11 @@ summary:focus-visible {
     }
 
     .catalogue-blue .catalogue-class { background: #c4e0ff; color: #0e4b85 }
-    .catalogue-class small { font-size: 7px; font-weight: 900; letter-spacing: .4px }
-    .catalogue-class strong { font-family: Manrope, sans-serif; font-size: 27px; line-height: 1.05 }
+    .catalogue-class small { font-size: 0.5rem; font-weight: 900; letter-spacing: .4px }
+    .catalogue-class strong { font-family: var(--font-display); font-size: 1.6875rem; line-height: 1.05 }
     .catalogue-card-title { min-width: 0; padding-top: 2px }
-    .catalogue-card-title h2 { margin: 0 0 4px; color: #123b68; font-family: Manrope, sans-serif; font-size: 16px; font-weight: 800; letter-spacing: -.5px; line-height: 1.25 }
-    .catalogue-card-title p { max-width: 185px; margin: 0; color: #53687b; font-size: 10px; line-height: 1.4 }
+    .catalogue-card-title h2 { margin: 0 0 4px; color: #123b68; font-family: var(--font-display); font-size: 1.125rem; font-weight: 800; letter-spacing: -.5px; line-height: 1.25 }
+    .catalogue-card-title p { max-width: 185px; margin: 0; color: #53687b; font-size: 0.75rem; line-height: 1.4 }
 
     .catalogue-card-arrow {
         display: grid;
@@ -4140,7 +4187,7 @@ summary:focus-visible {
         align-items: center;
         gap: 3px;
         color: #294158;
-        font-size: 7px;
+        font-size: 0.5625rem;
         font-weight: 800;
         white-space: nowrap
     }
@@ -4172,7 +4219,7 @@ summary:focus-visible {
         border-radius: 8px;
         background: #ff6909;
         color: white;
-        font-size: 10px;
+        font-size: 0.75rem;
         font-weight: 800;
         line-height: 1;
         transition: background .2s ease, transform .2s ease
@@ -4200,13 +4247,13 @@ summary:focus-visible {
     .catalogue-panel > h2 {
         margin: 0 0 3px;
         color: #113b69;
-        font-family: Manrope, sans-serif;
-        font-size: 22px;
+        font-family: var(--font-display);
+        font-size: 1.375rem;
         font-weight: 800;
         letter-spacing: -.7px
     }
 
-    .catalogue-panel > p { margin: 0 0 15px; color: #627388; font-size: 11px }
+    .catalogue-panel > p { margin: 0 0 15px; color: #627388; font-size: 0.6875rem }
 
     .journey-cards {
         display: grid;
@@ -4241,9 +4288,9 @@ summary:focus-visible {
 
     .journey-icon svg { width: 23px; height: 23px; stroke-width: 2.5 }
     .journey-blue .journey-icon { background: #c9e2ff; color: #164c82 }
-    .journey-card strong { color: #12406f; font-size: 10px; font-weight: 800 }
-    .journey-card h3 { margin: 1px 0 3px; color: #163b65; font-size: 11px; font-weight: 900 }
-    .journey-card p { margin: 0; color: #5d7081; font-size: 9px; line-height: 1.35 }
+    .journey-card strong { color: #12406f; font-size: 0.625rem; font-weight: 800 }
+    .journey-card h3 { margin: 1px 0 3px; color: #163b65; font-size: 0.6875rem; font-weight: 900 }
+    .journey-card p { margin: 0; color: #5d7081; font-size: 0.5625rem; line-height: 1.35 }
     .journey-link-arrow { position: absolute; top: 50%; right: -18px; z-index: 2; width: 16px; color: #86a6c4 }
 
     .catalogue-benefits { padding-top: 8px }
@@ -4252,8 +4299,8 @@ summary:focus-visible {
     .school-benefit { display: flex; min-height: 66px; align-items: center; gap: 9px; padding: 8px 10px; border: 1px solid #f4eee6; border-radius: 12px; background: #fffefa }
     .benefit-icon { width: 37px; height: 37px; background: #fff1d2 }
     .benefit-icon svg { width: 21px; height: 21px; stroke-width: 2.4 }
-    .school-benefit h3 { margin: 0 0 3px; color: #153d67; font-size: 10px; font-weight: 900 }
-    .school-benefit p { margin: 0; color: #718095; font-size: 8px; line-height: 1.4 }
+    .school-benefit h3 { margin: 0 0 3px; color: #153d67; font-size: 0.625rem; font-weight: 900 }
+    .school-benefit p { margin: 0; color: #718095; font-size: 0.5rem; line-height: 1.4 }
     .kit-bars-icon { display: inline-flex; height: 18px; align-items: end; gap: 2px }
     .kit-bars-icon i { display: block; width: 4px; height: 8px; border: 1.5px solid currentColor; border-radius: 1px }
     .kit-bars-icon i:nth-child(2) { height: 13px }
@@ -4274,11 +4321,11 @@ summary:focus-visible {
         box-shadow: 0 9px 23px rgba(107, 81, 50, .08)
     }
 
-    .catalogue-cta h2 { margin: 0 0 5px; color: #113b69; font-family: Manrope, sans-serif; font-size: 27px; font-weight: 800; letter-spacing: -.8px }
-    .catalogue-cta p { margin: 0; color: #5d6e81; font-size: 13px }
+    .catalogue-cta h2 { margin: 0 0 5px; color: #113b69; font-family: var(--font-display); font-size: 1.6875rem; font-weight: 800; letter-spacing: -.8px }
+    .catalogue-cta p { margin: 0; color: #5d6e81; font-size: 0.8125rem }
     .catalogue-cta-actions { display: flex; gap: 10px; margin-top: 15px }
-    .catalogue-cta-actions .catalogue-explore { position: static; min-height: 37px; padding: 10px 15px; font-size: 11px }
-    .catalogue-download { display: inline-flex; min-height: 37px; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #f48237; border-radius: 8px; background: rgba(255, 255, 255, .58); color: #cf5b17; font-size: 10px; font-weight: 800 }
+    .catalogue-cta-actions .catalogue-explore { position: static; min-height: 37px; padding: 10px 15px; font-size: 0.6875rem }
+    .catalogue-download { display: inline-flex; min-height: 37px; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #f48237; border-radius: 8px; background: rgba(255, 255, 255, .58); color: #cf5b17; font-size: 0.625rem; font-weight: 800 }
     .catalogue-download svg { width: 15px; height: 15px }
     .school-illustration { position: relative; width: 300px; height: 140px; flex: 0 0 auto; align-self: end }
     .school-cloud { position: absolute; top: 8px; right: 5px; width: 46px; height: 17px; border-radius: 20px; background: rgba(255,255,255,.82) }
@@ -4298,7 +4345,7 @@ summary:focus-visible {
     .school-tree::after { position: absolute; left: 10px; bottom: -7px; width: 5px; height: 18px; background: #93613f; content: '' }
     .tree-left { right: 145px }
     .tree-right { right: 17px; transform: scale(.82) }
-    .school-caption { position: absolute; top: 36px; left: 4px; transform: rotate(-9deg); color: #6a7d95; font-family: Manrope, sans-serif; font-size: 11px; font-style: italic; line-height: 1.25 }
+    .school-caption { position: absolute; top: 36px; left: 4px; transform: rotate(-9deg); color: #6a7d95; font-family: var(--font-display); font-size: 0.6875rem; font-style: italic; line-height: 1.25 }
     .school-doodle { position: absolute; top: 21px; left: 96px; width: 28px; color: #fa6910; transform: rotate(-35deg) }
 
     .kit-detail-page {
@@ -4309,7 +4356,7 @@ summary:focus-visible {
         color: #133b65
     }
 
-    .detail-breadcrumb { display: flex; min-height: 34px; align-items: center; gap: 7px; color: #55708b; font-size: 10px }
+    .detail-breadcrumb { display: flex; min-height: 34px; align-items: center; gap: 7px; color: #55708b; font-size: 0.625rem }
     .detail-breadcrumb > svg { width: 12px; height: 12px; color: #96a4b1 }
     .detail-breadcrumb a { display: inline-flex; align-items: center; gap: 5px; font-weight: 600 }
     .detail-breadcrumb a:first-child::before { display: inline-block; width: 8px; height: 8px; border: 2px solid #f16a19; border-radius: 2px; content: '' }
@@ -4334,11 +4381,11 @@ summary:focus-visible {
     }
 
     .detail-welcome-copy { min-width: 0 }
-    .detail-welcome-kicker { color: #e76d1c; font-size: 12px; font-weight: 900; letter-spacing: 1.4px }
-    .detail-welcome h1 { margin: 7px 0 0; color: #143c68; font-family: Manrope, sans-serif; font-size: clamp(34px, 4vw, 50px); font-weight: 800; letter-spacing: -1.7px; line-height: 1.08; overflow-wrap: anywhere }
-    .detail-welcome-summary { max-width: 680px; margin: 12px 0 0; color: #647c91; font-size: 14px; line-height: 1.6 }
+    .detail-welcome-kicker { color: #e76d1c; font-size: 0.75rem; font-weight: 900; letter-spacing: 1.4px }
+    .detail-welcome h1 { margin: 7px 0 0; color: #143c68; font-family: var(--font-display); font-size: clamp(2.125rem, 4vw, 3.125rem); font-weight: 800; letter-spacing: -1.7px; line-height: 1.08; overflow-wrap: anywhere }
+    .detail-welcome-summary { max-width: 680px; margin: 12px 0 0; color: #647c91; font-size: 0.875rem; line-height: 1.6 }
     .detail-robot-message { display: flex; max-width: 560px; min-width: 0; align-items: center; gap: 18px }
-    .detail-robot-message p { position: relative; margin: 0; padding: 16px 19px; border: 1px solid #f1dfc8; border-radius: 16px 16px 5px 16px; background: rgba(255, 255, 255, .9); color: #365875; font-size: 16px; font-weight: 700; line-height: 1.5 }
+    .detail-robot-message p { position: relative; margin: 0; padding: 16px 19px; border: 1px solid #f1dfc8; border-radius: 16px 16px 5px 16px; background: rgba(255, 255, 255, .9); color: #365875; font-size: 1rem; font-weight: 700; line-height: 1.5 }
     .detail-robot-image { display: block; width: 150px; height: 116px; flex: 0 0 auto; border: 1px solid rgba(255, 255, 255, .9); border-radius: 18px; background: #e9f2f4; box-shadow: 0 8px 20px rgba(32, 56, 88, .12); object-fit: cover; object-position: center 38% }
 
     .detail-overview {
@@ -4385,7 +4432,7 @@ summary:focus-visible {
     .detail-product-visual { position: relative; z-index: 1; width: 86%; height: 310px; overflow: visible }
     .detail-product-image { position: relative; z-index: 1; width: 86%; height: 310px; object-fit: contain }
     .detail-gallery-video { position: absolute; inset: auto 12px 12px; z-index: 3; width: min(52%, 300px); max-height: 120px; border-radius: 8px; background: #101b28 }
-    .detail-gallery-caption { margin: 0; padding: 10px 16px; color: #647c91; font-size: 13px; line-height: 1.5; text-align: center }
+    .detail-gallery-caption { margin: 0; padding: 10px 16px; color: #647c91; font-size: 0.8125rem; line-height: 1.5; text-align: center }
     .gallery-thumb { position: relative }
     .gallery-thumb > img { width: 100%; height: 100%; object-fit: cover }
     .gallery-video-indicator { position: absolute; right: 4px; bottom: 4px; width: 15px; height: 15px; padding: 3px; border-radius: 50%; background: #f06b14; color: white }
@@ -4399,7 +4446,7 @@ summary:focus-visible {
         align-items: center;
         gap: 7px;
         color: #214766;
-        font-size: 9px;
+        font-size: 0.5625rem;
         font-weight: 800
     }
 
@@ -4413,25 +4460,25 @@ summary:focus-visible {
     .gallery-thumb .kit-visual { width: 100%; height: 100% }
 
     .detail-intro { padding: 8px 5px 6px 0 }
-    .detail-class-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 50px; background: #fff0d4; color: #eb620f; font-size: 10px; font-weight: 900 }
-    .detail-class-pill > span { font-size: 13px }
+    .detail-class-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 50px; background: #fff0d4; color: #eb620f; font-size: 0.625rem; font-weight: 900 }
+    .detail-class-pill > span { font-size: 0.8125rem }
     .detail-blue { background: #dcedff; color: #124f86 }
-    .detail-intro h2 { margin: 10px 0 5px; color: #143c68; font-family: Manrope, sans-serif; font-size: clamp(29px, 3.2vw, 40px); font-weight: 800; letter-spacing: -1.3px; line-height: 1.1 }
-    .detail-lead { margin: 0; color: #506d87; font-size: 16px; line-height: 1.6 }
+    .detail-intro h2 { margin: 10px 0 5px; color: #143c68; font-family: var(--font-display); font-size: clamp(1.8125rem, 3.2vw, 2.5rem); font-weight: 800; letter-spacing: -1.3px; line-height: 1.1 }
+    .detail-lead { margin: 0; color: #506d87; font-size: 1rem; line-height: 1.6 }
     .detail-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 22px 0 16px }
     .detail-stats > div { display: flex; min-height: 72px; align-items: center; gap: 9px; padding: 10px; border: 1px solid #f2e7d8; border-radius: 13px; background: rgba(255,255,255,.72) }
     .stat-icon { display: grid; width: 36px; height: 36px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #fff0d8; color: #f06b14 }
     .stat-icon svg { width: 19px; height: 19px }
     .detail-stats p { display: flex; min-width: 0; flex-direction: column; gap: 2px; margin: 0 }
-    .detail-stats strong { color: #183e65; font-size: 13px; font-weight: 900; white-space: normal }
-    .detail-stats small { color: #77869a; font-size: 11px }
+    .detail-stats strong { color: #183e65; font-size: 0.8125rem; font-weight: 900; white-space: normal }
+    .detail-stats small { color: #77869a; font-size: 0.6875rem }
     .detail-bar-chart { display: inline-flex; height: 14px; align-items: end; gap: 2px }
     .detail-bar-chart i { width: 3px; height: 6px; background: currentColor }
     .detail-bar-chart i:nth-child(2) { height: 10px }
     .detail-bar-chart i:nth-child(3) { height: 14px }
-    .detail-description { margin: 0; color: #647a8f; font-size: 14px; line-height: 1.65 }
+    .detail-description { margin: 0; color: #647a8f; font-size: 0.875rem; line-height: 1.65 }
     .detail-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 19px }
-    .detail-button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 9px; padding: 11px 18px; border: 1px solid transparent; border-radius: 11px; font-size: 13px; font-weight: 900; transition: background .2s ease, transform .2s ease }
+    .detail-button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 9px; padding: 11px 18px; border: 1px solid transparent; border-radius: 11px; font-size: 0.8125rem; font-weight: 900; transition: background .2s ease, transform .2s ease }
     .detail-button:hover { transform: translateY(-1px) }
     .detail-button svg { width: 15px; height: 15px }
     .detail-button-primary { background: #ff6a0a; color: white }
@@ -4451,13 +4498,13 @@ summary:focus-visible {
     }
 
     .detail-section-heading { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px }
-    .detail-section-number { display: grid; width: 46px; height: 46px; flex: 0 0 auto; place-items: center; border-radius: 13px; background: #fff0d8; color: #6a8299; font-family: Manrope, sans-serif; font-size: 16px; font-weight: 800 }
-    .detail-section-heading h2 { margin: 0 0 6px; color: #153f6d; font-family: Manrope, sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -.6px; line-height: 1.2 }
-    .detail-section-heading p { max-width: 720px; margin: 0; color: #647c91; font-size: 14px; line-height: 1.6 }
+    .detail-section-number { display: grid; width: 46px; height: 46px; flex: 0 0 auto; place-items: center; border-radius: 13px; background: #fff0d8; color: #6a8299; font-family: var(--font-display); font-size: 1rem; font-weight: 800 }
+    .detail-section-heading h2 { margin: 0 0 6px; color: #153f6d; font-family: var(--font-display); font-size: 1.625rem; font-weight: 800; letter-spacing: -.6px; line-height: 1.2 }
+    .detail-section-heading p { max-width: 720px; margin: 0; color: #647c91; font-size: 0.875rem; line-height: 1.6 }
     .detail-dynamic-gallery { display: block }
     .detail-dynamic-gallery > .detail-section-heading { margin-bottom: 18px }
     .detail-dynamic-gallery .detail-gallery { max-width: 900px; margin: 0 auto }
-    .detail-content-warning { margin-top: 8px; padding: 9px 12px; border: 1px solid #f0d7b6; border-radius: 9px; background: #fff8e9; color: #795727; font-size: 10px }
+    .detail-content-warning { margin-top: 8px; padding: 9px 12px; border: 1px solid #f0d7b6; border-radius: 9px; background: #fff8e9; color: #795727; font-size: 0.625rem }
     .detail-managed-media { display: grid; gap: 8px; min-width: 0 }
     .detail-managed-media img,
     .detail-managed-media video { display: block; width: 100%; max-height: 250px; border-radius: 10px; background: #f1eee8; object-fit: cover }
@@ -4474,8 +4521,8 @@ summary:focus-visible {
     .learning-outcomes { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0; padding: 0; list-style: none }
     .learning-outcome { position: relative; min-width: 0; min-height: 0; padding: 0 0 0 25px; border: 0; border-radius: 0; background: transparent; box-shadow: none; text-align: left }
     .learning-outcome::before { position: absolute; top: .58em; left: 2px; width: 9px; height: 9px; border-radius: 50%; background: #f06b0a; content: '' }
-    .learning-outcome strong { display: block; color: #173f68; font-size: 15px; font-weight: 800; line-height: 1.45 }
-    .learning-outcome p { margin: 4px 0 0; color: #6f8092; font-size: 13px; line-height: 1.55 }
+    .learning-outcome strong { display: block; color: #173f68; font-size: 0.9375rem; font-weight: 800; line-height: 1.45 }
+    .learning-outcome p { margin: 4px 0 0; color: #6f8092; font-size: 0.8125rem; line-height: 1.55 }
     .student-illustration { display: block; width: 100%; max-height: 220px; align-self: stretch; border-radius: 15px; object-fit: cover; box-shadow: 0 7px 18px rgba(66, 54, 41, .09) }
 
     .detail-kit-contents { display: block }
@@ -4489,31 +4536,31 @@ summary:focus-visible {
     .component-card-image { display: grid; width: 100%; height: 220px; flex: 0 0 auto; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 90%, rgba(196, 151, 100, .2), transparent 60%), linear-gradient(145deg, #f8efe2, #fff9f0 65%, #f6e5cf) }
     .component-card-image img { display: block; width: 100%; height: 100%; object-fit: cover }
     .component-card-image .component-card-visual { display: block; width: 100%; height: 100%; padding: 10px; object-fit: contain }
-    .component-card-front > strong { padding: 13px 15px 0; color: #214469; font-size: 16px; font-weight: 900; line-height: 1.35 }
-    .component-card-hint { margin-top: auto; padding: 7px 15px 0; color: #9a7958; font-size: 11px; font-weight: 700 }
+    .component-card-front > strong { padding: 13px 15px 0; color: #214469; font-size: 1rem; font-weight: 900; line-height: 1.35 }
+    .component-card-hint { margin-top: auto; padding: 7px 15px 0; color: #9a7958; font-size: 0.6875rem; font-weight: 700 }
     .component-card-back { align-items: flex-start; justify-content: center; padding: 24px; transform: rotateY(180deg); color: #365875; pointer-events: none }
     .component-card.is-flipped .component-card-back { pointer-events: auto }
     .component-card-back-icon { display: grid; width: 46px; height: 46px; margin-bottom: 15px; place-items: center; border-radius: 13px; background: #fff0d8; color: #e87928 }
     .component-card-back-icon svg { width: 24px; height: 24px }
-    .component-card-back h3 { margin: 0 0 10px; color: #173f68; font-family: Manrope, sans-serif; font-size: 20px; font-weight: 800; line-height: 1.25 }
-    .component-card-back p { margin: 0; color: #647a8f; font-size: 14px; line-height: 1.6 }
+    .component-card-back h3 { margin: 0 0 10px; color: #173f68; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; line-height: 1.25 }
+    .component-card-back p { margin: 0; color: #647a8f; font-size: 0.875rem; line-height: 1.6 }
     .component-card-back video { width: 100%; max-height: 115px; margin-top: 14px; border-radius: 9px; background: #101b28 }
-    .component-card-back-action { margin-top: auto; padding: 9px 0 0; border: 0; background: none; color: #e46b21; cursor: pointer; font: inherit; font-size: 12px; font-weight: 800 }
+    .component-card-back-action { margin-top: auto; padding: 9px 0 0; border: 0; background: none; color: #e46b21; cursor: pointer; font: inherit; font-size: 0.75rem; font-weight: 800 }
     .component-card-back-action:hover { color: #b94f10; text-decoration: underline }
     .component-card:not(.is-flipped):hover { transform: translateY(-2px) }
     .component-card-front:focus-visible,
     .component-card-back-action:focus-visible { outline-offset: -4px }
     .lms-feature video { width: 100%; max-height: 90px; border-radius: 6px }
     .specification-card { padding: 20px; border: 1px solid #f1e1cc; border-radius: 16px; background: #fff6e7 }
-    .specification-card h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 12px; color: #204568; font-size: 17px; font-weight: 900 }
+    .specification-card h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 12px; color: #204568; font-size: 1.0625rem; font-weight: 900 }
     .specification-card h3 svg { width: 20px; height: 20px; color: #f17419 }
-    .specification-row { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(225, 203, 174, .38); color: #597187; font-size: 13px; line-height: 1.5 }
-    .specification-row strong { color: #516c84; font-size: 13px; font-weight: 700 }
+    .specification-row { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(225, 203, 174, .38); color: #597187; font-size: 0.8125rem; line-height: 1.5 }
+    .specification-row strong { color: #516c84; font-size: 0.8125rem; font-weight: 700 }
 
     .detail-projects { display: block }
     .lesson-sequence { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px }
     .lesson-card { position: relative; min-width: 0; padding: 13px; border: 1px solid #f0e6da; border-radius: 15px; background: #fffdf9; box-shadow: 0 5px 14px rgba(82, 64, 44, .04) }
-    .lesson-number { position: absolute; top: 9px; left: 9px; z-index: 2; display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #f46a08; color: white; font-size: 12px; font-weight: 900 }
+    .lesson-number { position: absolute; top: 9px; left: 9px; z-index: 2; display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #f46a08; color: white; font-size: 0.75rem; font-weight: 900 }
     .lesson-art { display: grid; height: 126px; place-items: center; overflow: hidden; border-radius: 11px; background: linear-gradient(145deg, #f4dfc8, #fff5e6) }
     .lesson-art-1 { background: #fce8d7 }
     .lesson-art-2 { background: #fff1d5 }
@@ -4523,9 +4570,9 @@ summary:focus-visible {
     .lesson-art .detail-managed-media { width: 100%; height: 100% }
     .lesson-art .detail-managed-media img,
     .lesson-art .detail-managed-media video { width: 100%; height: 100%; max-height: none; border-radius: 0; object-fit: cover }
-    .lesson-card h3 { margin: 10px 0 6px; color: #21456b; font-size: 15px; font-weight: 900; line-height: 1.35 }
-    .lesson-card p { min-height: 58px; margin: 0; color: #6f8091; font-size: 12px; line-height: 1.5 }
-    .lesson-time { display: inline-flex; align-items: center; gap: 5px; margin-top: 9px; color: #d15c13; font-size: 12px; font-weight: 700 }
+    .lesson-card h3 { margin: 10px 0 6px; color: #21456b; font-size: 0.9375rem; font-weight: 900; line-height: 1.35 }
+    .lesson-card p { min-height: 58px; margin: 0; color: #6f8091; font-size: 0.75rem; line-height: 1.5 }
+    .lesson-time { display: inline-flex; align-items: center; gap: 5px; margin-top: 9px; color: #d15c13; font-size: 0.75rem; font-weight: 700 }
     .lesson-time svg { width: 15px; height: 15px }
 
     .lms-section { align-items: center }
@@ -4534,42 +4581,42 @@ summary:focus-visible {
     .lms-feature > span { display: grid; width: 42px; height: 42px; margin: 0 auto 11px; place-items: center; border-radius: 13px; background: #fff1d8; color: #f26a0d }
     .lms-feature > span svg { width: 22px; height: 22px }
     .lms-feature > span img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover }
-    .lms-feature h3 { margin: 0 0 6px; color: #24496d; font-size: 13px; font-weight: 900; line-height: 1.4 }
-    .lms-feature p { margin: 0; color: #748396; font-size: 12px; line-height: 1.5 }
+    .lms-feature h3 { margin: 0 0 6px; color: #24496d; font-size: 0.8125rem; font-weight: 900; line-height: 1.4 }
+    .lms-feature p { margin: 0; color: #748396; font-size: 0.75rem; line-height: 1.5 }
     .lms-laptop { position: relative; width: 100%; max-width: 390px; justify-self: center; padding: 6px 7px 10px; border: 4px solid #293847; border-bottom-width: 8px; border-radius: 10px 10px 4px 4px; background: #171f27; box-shadow: 0 10px 17px rgba(25, 37, 47, .18) }
     .lms-screen { min-height: 154px; overflow: hidden; background: #fff }
-    .lms-topbar { padding: 5px 7px; border-bottom: 1px solid #e8ebee; color: #233f5c; font-size: 7px; font-weight: 800 }
+    .lms-topbar { padding: 5px 7px; border-bottom: 1px solid #e8ebee; color: #233f5c; font-size: 0.4375rem; font-weight: 800 }
     .lms-topbar b { color: #f16a17 }
     .lms-screen-body { display: grid; grid-template-columns: 32px 1fr; min-height: 130px }
     .lms-screen-body aside { display: flex; flex-direction: column; gap: 13px; align-items: center; padding: 9px 4px; border-right: 1px solid #edf0f3; background: #f6f7f8 }
     .lms-screen-body aside i { width: 13px; height: 4px; border-radius: 3px; background: #d6dce1 }
     .lms-screen-body > div { padding: 7px }
-    .lms-screen-body strong { display: block; margin-bottom: 5px; color: #254564; font-size: 7px }
+    .lms-screen-body strong { display: block; margin-bottom: 5px; color: #254564; font-size: 0.4375rem }
     .lms-video-preview { position: relative; height: 70px; overflow: hidden; border-radius: 5px; background: #f4e3cd }
     .lms-video-preview .kit-visual { width: 100%; height: 100% }
     .lms-video-preview > img { width: 100%; height: 100%; object-fit: cover }
     .lms-video-preview video { width: 100%; height: 100%; object-fit: cover }
     .lms-video-preview > span { position: absolute; top: 50%; left: 50%; display: grid; width: 25px; height: 25px; transform: translate(-50%,-50%); place-items: center; border-radius: 50%; background: #ef711c; color: white }
     .lms-video-preview > span svg { width: 12px; height: 12px }
-    .lms-screen-body small { display: inline-block; margin: 5px 6px 0 0; color: #607890; font-size: 6px }
+    .lms-screen-body small { display: inline-block; margin: 5px 6px 0 0; color: #607890; font-size: 0.375rem }
     .laptop-base { position: absolute; right: -18px; bottom: -10px; left: -18px; height: 8px; border-radius: 0 0 15px 15px; background: linear-gradient(#7e8790, #313a43) }
 
     .detail-final-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 22px; padding: 24px 28px; border: 1px solid #f2e2cf; border-radius: 18px; background: linear-gradient(105deg, #ffead7, #fff7eb) }
-    .detail-final-cta > div > span { color: #eb6b14; font-size: 11px; font-weight: 900; letter-spacing: 1.2px }
-    .detail-final-cta h2 { margin: 6px 0; color: #173f69; font-family: Manrope, sans-serif; font-size: 24px; font-weight: 800 }
-    .detail-final-cta p { margin: 0; color: #63778b; font-size: 14px }
+    .detail-final-cta > div > span { color: #eb6b14; font-size: 0.6875rem; font-weight: 900; letter-spacing: 1.2px }
+    .detail-final-cta h2 { margin: 6px 0; color: #173f69; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800 }
+    .detail-final-cta p { margin: 0; color: #63778b; font-size: 0.875rem }
     .detail-specifications { display: block }
     .detail-specifications .detail-section-body { max-width: 760px }
     .detail-specifications .specification-card { margin-top: 8px }
     .detail-custom-section { display: block }
     .detail-custom-section .detail-section-body { max-width: 900px }
-    .detail-custom-body { margin: 0; color: #647a8f; font-size: 11px; line-height: 1.6 }
+    .detail-custom-body { margin: 0; color: #647a8f; font-size: 0.6875rem; line-height: 1.6 }
     .detail-custom-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 12px }
     .detail-custom-items article { padding: 16px; border: 1px solid #f1e8dc; border-radius: 14px; background: #fffdf9 }
-    .detail-custom-items h3 { margin: 8px 0 5px; color: #21456b; font-size: 14px; font-weight: 900 }
-    .detail-custom-items p { margin: 0; color: #6f8091; font-size: 12px; line-height: 1.5 }
+    .detail-custom-items h3 { margin: 8px 0 5px; color: #21456b; font-size: 0.875rem; font-weight: 900 }
+    .detail-custom-items p { margin: 0; color: #6f8091; font-size: 0.75rem; line-height: 1.5 }
     .kit-not-found { padding: 80px 0 }
-    .kit-not-found h1 { font-family: Manrope, sans-serif; color: #143c68 }
+    .kit-not-found h1 { font-family: var(--font-display); color: #143c68 }
 
     @media (max-width: 900px) {
         .catalogue-hero-inner { grid-template-columns: 1.1fr .9fr }
@@ -4578,8 +4625,8 @@ summary:focus-visible {
         .catalogue-card { min-height: 202px; padding: 11px }
         .catalogue-card-heading { grid-template-columns: 38px minmax(0, 1fr) 22px; gap: 7px }
         .catalogue-class { width: 38px; min-height: 47px }
-        .catalogue-card-title h2 { font-size: 14px }
-        .catalogue-card-title p { font-size: 9px }
+        .catalogue-card-title h2 { font-size: 1rem }
+        .catalogue-card-title p { font-size: 0.6875rem }
         .catalogue-card-bottom { right: 11px; left: 11px }
         .school-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
         .detail-overview { padding: 28px 22px }
@@ -4592,129 +4639,126 @@ summary:focus-visible {
     @media (max-width: 640px) {
         .catalogue-hero-inner { min-height: 200px; grid-template-columns: 1fr .62fr; gap: 0 }
         .catalogue-hero-copy { padding: 23px 0 20px }
-        .catalogue-hero-copy h1 { font-size: 29px }
-        .catalogue-hero-copy > p { font-size: 12px }
+        .catalogue-hero-copy h1 { font-size: 1.8125rem }
+        .catalogue-hero-copy > p { font-size: 0.75rem }
         .catalogue-points { gap: 6px 10px; margin-top: 13px }
-        .catalogue-points span { gap: 4px; font-size: 8px }
+        .catalogue-points span { gap: 4px; font-size: 0.5rem }
         .catalogue-points svg { width: 19px; height: 19px }
         .catalogue-hero-art { min-height: 195px; transform: scale(.82); transform-origin: center right }
         .catalogue-note,
         .catalogue-checklist { display: none }
         .catalogue-robot { top: 28px; left: 18%; transform: scale(.88) rotate(-4deg); transform-origin: top left }
         .catalogue-spark { top: 20px; right: 12% }
-        .catalogue-grid { gap: 8px }
-        .catalogue-card { min-height: 176px; padding: 9px; border-radius: 12px }
-        .catalogue-card-heading { grid-template-columns: 33px minmax(0, 1fr) 20px; gap: 6px }
-        .catalogue-class { width: 33px; min-height: 43px }
-        .catalogue-class strong { font-size: 23px }
-        .catalogue-class small { font-size: 6px }
-        .catalogue-card-title h2 { font-size: 12px }
-        .catalogue-card-title p { font-size: 8px }
-        .catalogue-card-arrow { width: 20px; height: 20px }
-        .catalogue-card-bottom { right: 9px; left: 9px; height: 71px }
-        .catalogue-card-features { max-width: 100%; gap: 4px 6px }
-        .catalogue-card-features span { font-size: 6px }
-        .catalogue-card-features svg { width: 10px; height: 10px }
-        .catalogue-product-visual { width: 65%; height: 81px }
-        .catalogue-explore { min-height: 27px; padding: 6px 8px; font-size: 8px }
+        .catalogue-grid { grid-template-columns: minmax(0, 1fr); gap: 10px }
+        .catalogue-card { min-height: 228px; padding: 12px; border-radius: 12px }
+        .catalogue-card-heading { grid-template-columns: 40px minmax(0, 1fr) 24px; gap: 9px }
+        .catalogue-class { width: 40px; min-height: 48px }
+        .catalogue-class strong { font-size: 1.5625rem }
+        .catalogue-class small { font-size: 0.5625rem }
+        .catalogue-card-title h2 { font-size: 1.125rem; overflow-wrap: anywhere }
+        .catalogue-card-title p { max-width: none; font-size: 0.8125rem; line-height: 1.45; overflow-wrap: anywhere }
+        .catalogue-card-arrow { width: 24px; height: 24px }
+        .catalogue-card-bottom { right: 12px; left: 12px; height: 82px }
+        .catalogue-card-features { display: none }
+        .catalogue-product-visual { right: 0; width: 48%; height: 88px }
+        .catalogue-explore { min-height: 34px; padding: 8px 11px; font-size: 0.75rem }
         .catalogue-panel { padding: 13px }
-        .catalogue-panel > h2 { font-size: 18px }
+        .catalogue-panel > h2 { font-size: 1.125rem }
         .journey-cards { gap: 7px }
         .journey-card { min-height: 94px; flex-direction: column; align-items: flex-start; gap: 5px; padding: 8px }
         .journey-icon { width: 30px; height: 30px }
         .journey-icon svg { width: 17px; height: 17px }
-        .journey-card strong { font-size: 8px }
-        .journey-card h3 { font-size: 9px }
-        .journey-card p { font-size: 7px }
+        .journey-card strong { font-size: 0.5rem }
+        .journey-card h3 { font-size: 0.5625rem }
+        .journey-card p { font-size: 0.4375rem }
         .journey-link-arrow { right: -14px; width: 12px }
         .school-benefit-grid { gap: 6px }
         .school-benefit { min-height: 59px; gap: 6px; padding: 6px }
         .benefit-icon { width: 30px; height: 30px }
         .benefit-icon svg { width: 17px; height: 17px }
-        .school-benefit h3 { font-size: 8px }
-        .school-benefit p { font-size: 7px }
+        .school-benefit h3 { font-size: 0.5rem }
+        .school-benefit p { font-size: 0.4375rem }
         .catalogue-cta { min-height: 140px; padding: 17px }
-        .catalogue-cta h2 { max-width: 280px; font-size: 20px }
-        .catalogue-cta p { max-width: 240px; font-size: 10px }
+        .catalogue-cta h2 { max-width: 280px; font-size: 1.25rem }
+        .catalogue-cta p { max-width: 240px; font-size: 0.625rem }
         .catalogue-cta-actions { flex-wrap: wrap; margin-top: 10px }
         .catalogue-cta-actions .catalogue-explore,
-        .catalogue-download { min-height: 32px; padding: 8px; font-size: 8px }
+        .catalogue-download { min-height: 32px; padding: 8px; font-size: 0.5rem }
         .school-illustration { position: absolute; right: -85px; bottom: 0; width: 230px; opacity: .8 }
         .school-caption { display: none }
-        .detail-breadcrumb { gap: 4px; font-size: 8px }
+        .detail-breadcrumb { gap: 4px; font-size: 0.5rem }
         .detail-welcome { align-items: flex-start; flex-direction: column; gap: 16px; padding: 18px }
-        .detail-welcome-kicker { font-size: 9px }
-        .detail-welcome h1 { font-size: clamp(29px, 8vw, 38px) }
+        .detail-welcome-kicker { font-size: 0.5625rem }
+        .detail-welcome h1 { font-size: clamp(1.8125rem, 8vw, 2.375rem) }
         .detail-robot-message { width: 100%; max-width: none; justify-content: flex-start }
-        .detail-robot-message p { max-width: none; flex: 1; font-size: 13px }
+        .detail-robot-message p { max-width: none; flex: 1; font-size: 0.8125rem }
 
         .detail-robot-image { width: 96px; height: 78px; border-radius: 13px }
         .detail-overview { padding: 22px 16px }
         .detail-main-image { min-height: 255px }
         .detail-product-visual { width: 100%; height: 225px }
-        .watch-demo { right: 7px; bottom: 6px; font-size: 7px }
+        .watch-demo { right: 7px; bottom: 6px; font-size: 0.4375rem }
         .watch-demo span { width: 25px; height: 25px }
         .watch-demo svg { width: 11px; height: 11px }
         .gallery-strip { height: 55px; gap: 6px; padding: 6px }
         .gallery-arrow { width: 24px; height: 24px }
         .gallery-arrow svg { width: 14px; height: 14px }
         .gallery-thumb { height: 41px }
-        .detail-intro h2 { font-size: 25px }
-        .detail-lead { font-size: 13px }
-        .detail-class-pill { padding: 6px 9px; font-size: 10px }
+        .detail-intro h2 { font-size: 1.5625rem }
+        .detail-lead { font-size: 0.8125rem }
+        .detail-class-pill { padding: 6px 9px; font-size: 0.625rem }
         .detail-overview .detail-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 520px); gap: 8px; margin: 18px auto 14px }
         .detail-overview .detail-stats > div { min-height: 62px; gap: 7px; padding: 8px }
         .detail-overview .detail-stats > div:last-child { grid-column: 1 / -1; width: calc(50% - 4px); justify-self: center }
         .stat-icon { width: 27px; height: 27px }
         .stat-icon svg { width: 15px; height: 15px }
-        .detail-overview .detail-stats strong { font-size: 12px }
-        .detail-overview .detail-stats small { font-size: 10px }
-        .detail-description { font-size: 12px }
+        .detail-overview .detail-stats strong { font-size: 0.75rem }
+        .detail-overview .detail-stats small { font-size: 0.625rem }
+        .detail-description { font-size: 0.75rem }
         .detail-actions { gap: 7px; margin-top: 13px }
-        .detail-button { min-height: 40px; gap: 6px; padding: 9px 11px; font-size: 11px }
+        .detail-button { min-height: 40px; gap: 6px; padding: 9px 11px; font-size: 0.6875rem }
         .detail-button svg { width: 14px; height: 14px }
         .detail-section { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; padding: 18px }
         .detail-section-heading { gap: 11px; margin-bottom: 15px }
-        .detail-section-number { width: 38px; height: 38px; font-size: 13px }
-        .detail-section-heading h2 { font-size: 21px }
-        .detail-section-heading p { font-size: 12px }
+        .detail-section-number { width: 38px; height: 38px; font-size: 0.8125rem }
+        .detail-section-heading h2 { font-size: 1.3125rem }
+        .detail-section-heading p { font-size: 0.75rem }
         .learning-outcomes { gap: 11px }
         .learning-outcome { padding-left: 22px }
-        .learning-outcome strong { font-size: 13px }
-        .learning-outcome p { font-size: 11px }
+        .learning-outcome strong { font-size: 0.8125rem }
+        .learning-outcome p { font-size: 0.6875rem }
         .student-illustration { max-height: 190px }
         .component-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
         .component-card { height: 280px }
         .component-card-image { height: 185px }
         .component-card-front { padding-bottom: 12px }
-        .component-card-front > strong { padding: 12px 12px 0; font-size: 14px }
-        .component-card-hint { padding: 6px 12px 0; font-size: 10px }
+        .component-card-front > strong { padding: 12px 12px 0; font-size: 0.875rem }
+        .component-card-hint { padding: 6px 12px 0; font-size: 0.625rem }
         .component-card-back { padding: 18px }
-        .component-card-back h3 { font-size: 17px }
-        .component-card-back p { font-size: 12px }
+        .component-card-back h3 { font-size: 1.0625rem }
+        .component-card-back p { font-size: 0.75rem }
         .specification-card { padding: 16px }
-        .specification-row,.specification-row strong { font-size: 11px }
+        .specification-row,.specification-row strong { font-size: 0.6875rem }
         .lesson-sequence { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
         .lesson-card { padding: 9px }
         .lesson-art { height: 90px }
-        .lesson-card h3 { font-size: 12px }
-        .lesson-card p { min-height: 50px; font-size: 10px }
-        .lesson-time { font-size: 10px }
+        .lesson-card h3 { font-size: 0.75rem }
+        .lesson-card p { min-height: 50px; font-size: 0.625rem }
+        .lesson-time { font-size: 0.625rem }
         .lms-feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px }
         .lms-feature { min-height: 110px; padding: 12px 9px }
-        .lms-feature h3 { font-size: 11px }
-        .lms-feature p { font-size: 10px }
+        .lms-feature h3 { font-size: 0.6875rem }
+        .lms-feature p { font-size: 0.625rem }
         .lms-laptop { max-width: 320px }
         .detail-final-cta { align-items: flex-start; flex-direction: column; padding: 18px }
-        .detail-final-cta h2 { font-size: 21px }
+        .detail-final-cta h2 { font-size: 1.3125rem }
     }
 
 @media (max-width: 420px) {
         .catalogue-hero-inner { grid-template-columns: 1fr }
         .catalogue-hero-art { display: none }
         .catalogue-hero-copy { padding: 22px 0 }
-        .catalogue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
-        .catalogue-card { min-height: 175px }
+        .catalogue-grid { grid-template-columns: minmax(0, 1fr) }
         .journey-cards { grid-template-columns: 1fr }
         .journey-card { min-height: 70px; flex-direction: row; align-items: center }
         .journey-link-arrow { top: auto; right: 12px; bottom: -13px; transform: rotate(90deg) }
