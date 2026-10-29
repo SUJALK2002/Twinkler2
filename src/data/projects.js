@@ -1,0 +1,16 @@
+export const projects = [
+  { title: 'IR Obstacle Detector', level: 1, category: 'Sensors & basics', description: 'Explore infrared sensing and learn how electronics can detect nearby objects.', icon: 'radar', color: 'orange' },
+  { title: 'Ultrasonic Distance Meter', level: 1, category: 'Sensors & basics', description: 'Measure distance using sound waves and turn sensor data into useful information.', icon: 'ruler', color: 'blue' },
+  { title: 'Sound-Activated Lights', level: 1, category: 'Sensors & basics', description: 'Build a circuit that responds to sound and discover input-output logic.', icon: 'audio', color: 'green' },
+  { title: 'Rain Alarm System', level: 1, category: 'Sensors & basics', description: 'Create a simple alert system and explore practical sensor applications.', icon: 'cloud-rain', color: 'orange' },
+  { title: 'Temperature Display', level: 1, category: 'Sensors & basics', description: 'Read temperature from a sensor and display the result clearly.', icon: 'thermometer', color: 'blue' },
+  { title: 'Traffic Signal Timer', level: 1, category: 'Sensors & basics', description: 'Understand timing, sequences and the logic behind traffic signals.', icon: 'traffic-cone', color: 'green' },
+  { title: 'Line Follower Robot', level: 2, category: 'Robots & automation', description: 'Build a robot that follows a path and learn about sensing and motor control.', icon: 'route', color: 'blue' },
+  { title: 'Light Follower Robot', level: 2, category: 'Robots & automation', description: 'Use light sensors to make a robot respond to its environment.', icon: 'sun', color: 'orange' },
+  { title: 'Automatic Door Opener', level: 2, category: 'Robots & automation', description: 'Explore automation by building a system that reacts to a trigger.', icon: 'door-open', color: 'green' },
+  { title: 'Clap-Controlled Fan', level: 2, category: 'Robots & automation', description: 'Connect sound detection with a controlled output in a hands-on build.', icon: 'fan', color: 'blue' },
+  { title: 'Bluetooth-Controlled Car', level: 3, category: 'Connected & smart', description: 'Control a robot wirelessly and explore connected devices.', icon: 'bluetooth', color: 'orange' },
+  { title: 'RFID Attendance System', level: 3, category: 'Connected & smart', description: 'Discover identification technology and how data can be recorded.', icon: 'scan', color: 'green' },
+  { title: 'Voice-Controlled Devices', level: 3, category: 'Connected & smart', description: 'Explore ways voice commands can interact with electronic systems.', icon: 'mic', color: 'blue' },
+  { title: 'Arduino Weather Station', level: 3, category: 'Connected & smart', description: 'Combine sensors and a microcontroller to explore weather data.', icon: 'cloud-sun', color: 'orange' },
+]
